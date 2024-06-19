@@ -1,0 +1,9 @@
+<div [ngClass]="{cards: true}">
+    <h2 [style.marginBottom]="'10px'">Languages</h2>
+    <ul>
+        <li *ngFor="let skill of Data" 
+            (mouseenter)="checkLanguage(skill)"
+            (mouseleave)="lang = 'noname'"
+            [class.hovered]="skill === lang">{{skill}}</li>
+    </ul>
+</div>

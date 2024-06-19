@@ -1,0 +1,21 @@
+<div [ngClass]="{resume: true}">
+    <div [ngClass]="{cards: true}">
+        <div>
+            <img [src]="photo" alt="photo">
+        </div>
+        <h1>{{getFullName()}}</h1>
+        <p>{{town | uppercase}}</p>
+        <p>{{email}}</p>
+        <p>{{phone}}</p>
+        <p>{{jobExp}}</p>
+        <p>Desired Salary {{desiredSalary | currency : "USD" | slice:0:6}}</p>
+    </div> 
+
+    <ng-container *ngIf="skills.length > 0">
+        <app-languages [Data] = "skills"></app-languages>
+    </ng-container>
+
+    <app-references></app-references>
+</div>
+
+<p>{{date | date : 'shortDate'}}</p>
